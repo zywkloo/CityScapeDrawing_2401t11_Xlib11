@@ -1,12 +1,12 @@
 
 
-# I/O tutotrial makefile
+# 2401 t11
 #
 DIR_src = myLib/src/
 DIR_lib = myLib/lib/
 DIR_include = myLib/include/
 
-All: permit lib
+All: clean permit lib city
  
 permit: getPermit.c
 	gcc -o getPermit getPermit.c
@@ -27,8 +27,12 @@ uselib:
 	ls
 	./useStudentList <in.txt
 
+city: 
+	gcc -o city drawBuilding.c -lm -I/opt/X11/include  -L/opt/X11/lib -lX11
+
 clean: 
-	rm getPermit
+	find . -name "city" | xargs rm -v
+	find . -name "getPermit" | xargs rm -v
 	find . -name "*.o" | xargs rm -v
 	find . -name "*.a" | xargs rm -v
 
