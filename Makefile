@@ -6,9 +6,9 @@ DIR_src = myLib/src/
 DIR_lib = myLib/lib/
 DIR_include = myLib/include/
 
-All: Permit lib
+All: permit lib
  
-Permit: getPermit.c
+permit: getPermit.c
 	gcc -o getPermit getPermit.c
 lib: 
 	gcc -c  $(DIR_src)studentList.c -I $(DIR_include)
@@ -21,10 +21,16 @@ lib:
 	ls $(DIR_src)
 	cd $(DIR_lib);ls 
 
+uselib:
+	gcc -c useStudentList.c -I myLib/include
+	gcc -o useStudentList useStudentList.o -L./myLib/lib -lstudentList
+	ls
+	./useStudentList <in.txt
+
 clean: 
 	rm getPermit
-	find . -name "*.o" | xargs rm
-	find . -name "*.a" | xargs rm
+	find . -name "*.o" | xargs rm -v
+	find . -name "*.a" | xargs rm -v
 
 
 
