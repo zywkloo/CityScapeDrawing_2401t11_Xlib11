@@ -1,3 +1,4 @@
 
 getPermit
-myLib/include/libstudentList.a
+*.a
+*.o
