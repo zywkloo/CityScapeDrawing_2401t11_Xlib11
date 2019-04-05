@@ -23,8 +23,8 @@ lib:
 
 clean: 
 	rm getPermit
-	find .-name "*.o" | xargs rm
-	find .-name "*.a" | xargs rm
+	find . -name "*.o" | xargs rm
+	find . -name "*.a" | xargs rm
 
 
 

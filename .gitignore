@@ -2,3 +2,4 @@
 getPermit
 *.a
 *.o
+myLib/lib/libstudentList.a
